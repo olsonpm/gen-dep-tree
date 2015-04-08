@@ -115,7 +115,7 @@ GDT.prototype.generate = function generate() {
             console.log(repeatString('  ', aDep.lv) + aDep.file.replace(common, ''));
         });
     }));
-    md.write(path.resolve(this.fileName));
+    md.write(path.resolve(this.FileName()));
     md.end();
 
     function compileDeps(dep, lv) {
