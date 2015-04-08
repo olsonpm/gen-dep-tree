@@ -11,7 +11,7 @@ var mdeps = require('module-deps')
     , fs = require('fs');
 
 // Taken from async-resolve:
-CORE_MODULES_LIST = {
+var CORE_MODULES_LIST = {
     '_debugger': true
     , '_linklist': true
     , '_stream_duplex': true
@@ -55,16 +55,19 @@ CORE_MODULES_LIST = {
 };
 
 function GDT() {
+    var self = this;
+
     var my = {
         FileName: null
     };
+
     this.FileName = function FileName(filename_) {
         var res = my.FileName;
         if (arguments.length > 0) {
             if (filename_ !== null) {
-                Data.ValidateDataID(dataid_, true);
+                GDT.ValidateFileName(filename_, true);
             }
-            my.DataID = dataid_;
+            my.FileName = filename_;
             res = self;
         }
         return res;
@@ -79,7 +82,7 @@ GDT.ValidateFileName = function ValidateFileName(input, throwErr) {
         msg = 'Invalid Argument: file "' + path.resolve(input) + '" doesn' + "'" + 't exist';
     }
 
-    if (throwErr_ && msg) {
+    if (throwErr && msg) {
         throw new Error(msg);
     }
 
@@ -142,7 +145,7 @@ GDT.prototype.generate = function generate() {
             });
         }
     }
-}
+};
 
 
 //---------//
