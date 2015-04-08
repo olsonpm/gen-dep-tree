@@ -1,0 +1,31 @@
+{
+  "name": "gen-dep-tree",
+  "version": "0.1.0",
+  "description": "CLI to textually display the dependency tree of a given entry point 5 levels deep",
+  "main": "lib-core/index.js",
+  "bin": {
+    "gdt": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olsonpm/gen-dep-tree.git"
+  },
+  "author": "Phil Olson <philip.olson@protonmail.ch> (https://github.com/olsonpm)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olsonpm/gen-dep-tree/issues"
+  },
+  "homepage": "https://github.com/olsonpm/gen-dep-tree",
+  "dependencies": {
+    "JSONStream": "^0.10.0",
+    "commander": "^2.7.1",
+    "commondir": "^1.0.1",
+    "concat-stream": "^1.4.8",
+    "lazy.js": "^0.4.0",
+    "module-deps": "git://github.com/olsonpm/module-deps#skip-file-contents",
+    "repeat-string": "^1.5.2"
+  }
+}
